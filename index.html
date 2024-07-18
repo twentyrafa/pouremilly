@@ -23,14 +23,16 @@
             align-items: center;
             margin-top: 20px;
             position: relative;
+            width: 100%;
+            height: 100px; /* Defina uma altura para o contêiner se necessário */
         }
         .button {
-            padding: 15px 30px; /* Aumentando o tamanho dos botões */
+            padding: 15px 30px;
             margin: 10px;
             border-radius: 5px;
             cursor: pointer;
-            font-size: 18px; /* Ajustando o tamanho da fonte */
-            position: absolute; /* Permite movimentação */
+            font-size: 18px;
+            position: absolute;
         }
         #yes-button {
             background-color: #4CAF50;
@@ -39,13 +41,13 @@
             background-color: #f44336;
         }
         h1 {
-            color: black; /* Alterando a cor do texto para preto */
+            color: black;
         }
         #image {
-            display: none; /* Inicialmente escondida */
+            display: none;
             margin-top: 20px;
-            width: 300px; /* Ajuste o tamanho da imagem conforme necessário */
-            border-radius: 10px; /* Adiciona bordas arredondadas */
+            width: 300px;
+            border-radius: 10px;
         }
     </style>
 </head>
@@ -59,14 +61,14 @@
     
     <script>
         function mostrarImagem() {
-            document.getElementById('image').style.display = 'block'; // Exibe a imagem
+            document.getElementById('image').style.display = 'block';
         }
         
         function moverBoton() {
             var button = document.getElementById('no-button');
-            button.style.top = Math.random() * (window.innerHeight - button.offsetHeight) + 'px'; // Define uma nova posição vertical
-            button.style.left = Math.random() * (window.innerWidth - button.offsetWidth) + 'px'; // Define uma nova posição horizontal
-            button.style.pointerEvents = 'none'; // Torna o botão não clicável
+            button.style.top = Math.random() * (document.getElementById('buttons-container').offsetHeight - button.offsetHeight) + 'px';
+            button.style.left = Math.random() * (document.getElementById('buttons-container').offsetWidth - button.offsetWidth) + 'px';
+            button.style.pointerEvents = 'none';
         }
     </script>
 </body>
