@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pour Emilly</title>
+    <style>
+        body {
+            background-color: blue;
+            color: white;
+            text-align: center;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        #buttons-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px;
+            position: relative;
+        }
+        .button {
+            padding: 15px 30px; /* Aumentando o tamanho dos botões */
+            margin: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px; /* Ajustando o tamanho da fonte */
+            position: absolute; /* Permite movimentação */
+        }
+        #yes-button {
+            background-color: #4CAF50;
+        }
+        #no-button {
+            background-color: #f44336;
+        }
+        h1 {
+            color: black; /* Alterando a cor do texto para preto */
+        }
+        #image {
+            display: none; /* Inicialmente escondida */
+            margin-top: 20px;
+            width: 300px; /* Ajuste o tamanho da imagem conforme necessário */
+            border-radius: 10px; /* Adiciona bordas arredondadas */
+        }
+    </style>
+</head>
+<body>
+    <h1>Acceptes-tu de regarder les étoiles avec moi, Emilly?</h1>
+    <div id="buttons-container">
+        <button id="yes-button" class="button" onclick="mostrarImagem()">Oui!!</button>
+        <button id="no-button" class="button" onclick="moverBoton()">Non!!</button>
+    </div>
+    <img id="image" src="https://i.imgur.com/VkK3ROZ.jpeg" alt="Imagem de estrelas">
+    
+    <script>
+        function mostrarImagem() {
+            document.getElementById('image').style.display = 'block'; // Exibe a imagem
+        }
+        
+        function moverBoton() {
+            var button = document.getElementById('no-button');
+            button.style.top = Math.random() * (window.innerHeight - button.offsetHeight) + 'px'; // Define uma nova posição vertical
+            button.style.left = Math.random() * (window.innerWidth - button.offsetWidth) + 'px'; // Define uma nova posição horizontal
+            button.style.pointerEvents = 'none'; // Torna o botão não clicável
+        }
+    </script>
+</body>
+</html>
