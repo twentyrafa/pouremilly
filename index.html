@@ -23,8 +23,6 @@
             align-items: center;
             margin-top: 20px;
             position: relative;
-            width: 100%;
-            height: 100px; /* Defina uma altura para o contêiner se necessário */
         }
         .button {
             padding: 15px 30px;
@@ -32,7 +30,7 @@
             border-radius: 5px;
             cursor: pointer;
             font-size: 18px;
-            position: absolute;
+            position: relative; /* Alterado de absolute para relative */
         }
         #yes-button {
             background-color: #4CAF50;
@@ -43,32 +41,18 @@
         h1 {
             color: black;
         }
-        #image {
-            display: none;
-            margin-top: 20px;
-            width: 300px;
-            border-radius: 10px;
-        }
     </style>
 </head>
 <body>
     <h1>Acceptes-tu de regarder les étoiles avec moi, Emilly?</h1>
     <div id="buttons-container">
-        <button id="yes-button" class="button" onclick="mostrarImagem()">Oui!!</button>
-        <button id="no-button" class="button" onclick="moverBoton()">Non!!</button>
+        <button id="yes-button" class="button" onclick="mostrarMensagem('Você aceitou!')">Oui!!</button>
+        <button id="no-button" class="button" onclick="mostrarMensagem('Você recusou!')">Non!!</button>
     </div>
-    <img id="image" src="https://i.imgur.com/VkK3ROZ.jpeg" alt="Imagem de estrelas">
-    
+
     <script>
-        function mostrarImagem() {
-            document.getElementById('image').style.display = 'block';
-        }
-        
-        function moverBoton() {
-            var button = document.getElementById('no-button');
-            button.style.top = Math.random() * (document.getElementById('buttons-container').offsetHeight - button.offsetHeight) + 'px';
-            button.style.left = Math.random() * (document.getElementById('buttons-container').offsetWidth - button.offsetWidth) + 'px';
-            button.style.pointerEvents = 'none';
+        function mostrarMensagem(mensagem) {
+            alert(mensagem); // Exibe uma mensagem de alerta com a escolha
         }
     </script>
 </body>
